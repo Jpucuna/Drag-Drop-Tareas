@@ -1,0 +1,178 @@
+/* EL * redimenciona todo en border-box */
+/* estilos generales */
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* .modal{
+   position: fixed; 
+  width: 450px;
+   top: -50%; 
+  /* left: 50%; 
+  transform: translate(-50%,-50%);
+  transition: top 0.3s ease-in-out;
+} */
+
+/* estilos del modal */
+.modal{
+  width: 450px; 
+  border-radius: 10px;
+  position: fixed;
+  top: -50%;  
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  transition: top 0.3s ease-in-out;  
+  background-color: #fff;
+}
+
+.modal .header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+  color: #E9FFF9;
+  border-top-right-radius: 10px ;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #D64045;
+}
+
+.close-modal{
+  border: none;
+  font-size: 1.5rem;
+  background-color: #D64045;
+  color: #E9FFF9;
+}
+
+.body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+#tarea-input, #tarea_submit{
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin: 0.25rem;
+  border-radius: 9px;
+  border: 2px solid #ccc;
+}
+#tarea_submit{
+  color: #E9FFF9;
+}
+
+#tarea_submit{
+  background-color: #467599;
+}
+
+#overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ESTILO QUE SE APLICARÁN CUANDO ESTÉN ACTIVOS EL OVERLAY Y EL MODAL */
+.modal.active{
+  top: 15%;
+}
+
+#overlay.active{
+  display: block;
+}
+
+
+/* estilos de la tabla de tareas */
+
+.tarea-container{
+  width: 1000px;
+  height: 80vh;
+  display: flex;
+}
+
+.estado{
+  width: 25%;
+  background-color: #467599;
+  padding: 80px 1rem 0.5rem;
+  position: relative;
+}
+
+/* Esto hace que los elementos estados pares se pinten de otro color */
+.estado:nth-child(even){
+  background-color: #9ED8DB;
+}
+
+.estado h1{
+  text-align: center;
+  position: absolute;
+  background-color: #1D3354;
+  color: #E9FFF9;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+
+/* ESTILO DEL BOTON AGREGAR TAREA */
+#add_btn{
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+#add_btn:hover {
+  background-color: #aaa;
+}
+
+/* ESTILO DE LAS TAREAS */
+.tarea{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+      rgba(15, 15, 15, 0.1) 0px 2px 4px;
+}
+
+.tarea .close{
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  font-size: 2rem;
+}
+
+.tarea .close:hover{
+  color: #aaa;
+}
+
+
+
+
+
